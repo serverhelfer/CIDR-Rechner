@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" ng-app="appSubnet">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Subnet Calculador CIDR">
+    <meta name="keyword" content="subnet, calculator, cidr, ipv4">
+    <meta name="author" content="evertcode">
+
+    <title>Subnet Calculator</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead">
+            <div class="inner">
+                <h3 class="masthead-brand">Subnet Rechner</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" href="#">CIDR</a>
+                    <!-- <a class="nav-link disabled" href="#">VLSM</a> -->
+                </nav>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover" ng-controller="ctrlCIDR as cidr">
+            <div class="row">
+                <p class="justify">Classless Inter-Domain Routing (CIDR) beschreibt ein Verfahren zur effizienteren Nutzung des bestehenden 32-Bit-IP-Adress-Raumes für IPv4. Es wurde 1993 eingeführt, um die Größe von Routingtabellen zu reduzieren und um die verfügbaren Adressbereiche besser auszunutzen.</p>
+
+                <p class="justify">Mit CIDR entfällt die feste Zuordnung einer IPv4-Adresse zu einer Netzklasse, aus welcher aus den ersten beiden Bits des ersten Oktetts die Präfixlänge der jeweiligen Netzklasse hervorging. Die Präfixlänge ist mit CIDR frei wählbar und muss deshalb beim Aufschreiben eines IP-Subnetzes mit angegeben werden. Dazu verwendet man häufig eine Netzmaske. Textquelle: <a href="https://de.wikipedia.org/wiki/Classless_Inter-Domain_Routing" target="_blank">Wikipedia</a>.</p>
+            </div>
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-sm">
+                    <span>
+                        <input type="text" maxlength="3" id="octet-one" placeholder="192" ng-model="cidr.octetOne" ng-keyup="cidr.calculate()">
+                        <span class="dot">.</span>
+                    </span>
+                </div>
+                <div class="col-sm">
+                    <span>
+                        <input type="text" maxlength="3" id="octet-two" placeholder="168" ng-model="cidr.octetTwo" ng-keyup="cidr.calculate()">
+                        <span class="dot">.</span>
+                    </span>
+                </div>
+                <div class="col-sm">
+                    <span>
+                        <input type="text" maxlength="3" id="octet-three" placeholder="2" ng-model="cidr.octetThree" ng-keyup="cidr.calculate()">
+                        <span class="dot">.</span>
+                    </span>
+                </div>
+                <div class="col-sm">
+                    <span>
+                        <input type="text" maxlength="3" id="octet-four" placeholder="38" ng-model="cidr.octetFour" ng-keyup="cidr.calculate()">
+                        <span class="dot">/</span>
+                    </span>
+                </div>
+                <div class="col-sm">
+                    <span>
+                        <input type="text" maxlength="2" id="prefix" placeholder="24" ng-model="cidr.prefix" ng-keyup="cidr.calculate()">
+                        <span class="dot"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 65px;">
+                <div class="col-sm">
+                    <span class="netmask">
+                        <span class="value">{{cidr.mask}}</span>
+                        <span class="label">Netmask</span>
+                    </span>
+                </div>
+                <div class="col-sm">
+                    <span class="first">
+                        <span class="value">{{cidr.first}}</span>
+                        <span class="label">First IP</span>
+                    </span>
+                </div>
+                <div class="col-sm">
+                    <span class="last">
+                        <span class="value">{{cidr.last}}</span>
+                        <span class="label">Last IP</span>
+                    </span>
+                </div>
+                <div class="col-sm">
+                    <span class="count">
+                        <span class="value">{{cidr.hosts}}</span>
+                        <span class="label">Count</span>
+                    </span>
+                </div>
+            </div>
+        </main>
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Subnet Rechner von <a href="https://serverhelfer.de" target="_blank">Serverhelfer</a>.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="assets/plugins/jquery-slim.min.js"><\/script>')
+    </script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/netmask.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="app/components/cidr/cidr.js"></script>
+    <script src="app/app.module.js"></script>
+</body>
+</html>
