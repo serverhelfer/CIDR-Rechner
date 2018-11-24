@@ -37,9 +37,8 @@
 
         <main role="main" class="inner cover" ng-controller="ctrlCIDR as cidr">
             <div class="row">
-                <p class="justify">Classless Inter-Domain Routing (CIDR) beschreibt ein Verfahren zur effizienteren Nutzung des bestehenden 32-Bit-IP-Adress-Raumes für IPv4. Es wurde 1993 eingeführt, um die Größe von Routingtabellen zu reduzieren und um die verfügbaren Adressbereiche besser auszunutzen.</p>
-
-                <p class="justify">Mit CIDR entfällt die feste Zuordnung einer IPv4-Adresse zu einer Netzklasse, aus welcher aus den ersten beiden Bits des ersten Oktetts die Präfixlänge der jeweiligen Netzklasse hervorging. Die Präfixlänge ist mit CIDR frei wählbar und muss deshalb beim Aufschreiben eines IP-Subnetzes mit angegeben werden. Dazu verwendet man häufig eine Netzmaske. Textquelle: <a href="https://de.wikipedia.org/wiki/Classless_Inter-Domain_Routing" target="_blank">Wikipedia</a>.</p>
+                <p class="justify">Ein Subnetz ist die Aufteilung eines IP-Netzwerks (Internet Protocol Suite), wobei ein IP-Netzwerk eine Reihe von Kommunikationsprotokollen ist, die im Internet und anderen ähnlichen Netzwerken verwendet werden. Es ist allgemein bekannt als TCP/IP (Transmission Control Protocol/Internet Protocol).</p>
+                <p class="justify">Der Akt der Aufteilung eines Netzwerks in mindestens zwei getrennte Netzwerke wird als Subnetting bezeichnet, und Router sind Geräte, die den Verkehrsaustausch zwischen Subnetzwerken ermöglichen und als physikalische Grenze dienen. IPv4 ist die am häufigsten verwendete Netzwerkadressierungsarchitektur, obwohl der Einsatz von IPv6 seit 2006 zunimmt.</p>
             </div>
             <div class="row" style="margin-top: 40px;">
                 <div class="col-sm">
@@ -77,27 +76,31 @@
                 <div class="col-sm">
                     <span class="netmask">
                         <span class="value">{{cidr.mask}}</span>
-                        <span class="label">Netmask</span>
+                        <span class="label">Netzmaske</span>
                     </span>
                 </div>
                 <div class="col-sm">
                     <span class="first">
                         <span class="value">{{cidr.first}}</span>
-                        <span class="label">First IP</span>
+                        <span class="label">Erste IP</span>
                     </span>
                 </div>
                 <div class="col-sm">
                     <span class="last">
                         <span class="value">{{cidr.last}}</span>
-                        <span class="label">Last IP</span>
+                        <span class="label">Letzte IP</span>
                     </span>
                 </div>
                 <div class="col-sm">
                     <span class="count">
                         <span class="value">{{cidr.hosts}}</span>
-                        <span class="label">Count</span>
+                        <span class="label">Anzahl</span>
                     </span>
                 </div>
+            </div>
+            <div class="row" style="margin-top: 65px;">
+                <p class="justify">Eine IP-Adresse besteht aus einer Netzwerknummer (Routing-Präfix) und einem Rest-Feld (Host-Identifikator). Ein Rest-Feld ist eine Kennung, die spezifisch für eine bestimmte Host- oder Netzwerkschnittstelle ist. Ein Routing-Präfix wird oft in der Classless Inter-Domain Routing (CIDR)-Notation für IPv4 und IPV6 ausgedrückt. CIDR ist eine Methode zur Erstellung von eindeutigen Identifikatoren für Netzwerke und einzelne Geräte. Für IPv4 können Netzwerke auch mit einer Subnetzmaske spezifiziert werden, die manchmal in punktdezimaler Schreibweise ausgedrückt wird, wie im Feld "Subnetz" im Subnet-Rechner dargestellt. Alle Hosts in einem Subnetz haben das gleiche Netzwerkpräfix, im Gegensatz zur Hostkennung, die eine eindeutige lokale Identifikation ist. In IPv4 werden diese Subnetzmasken verwendet, um die Netzwerknummer und die Hostkennung zu unterscheiden. In IPv6 erfüllt das Netzwerkpräfix eine ähnliche Funktion wie die Subnetzmaske in IPv4, wobei die Präfixlänge die Anzahl der Bits in der Adresse darstellt.</p>
+                <p class="justify">Vor der Einführung von CIDR konnten IPv4-Netzwerkpräfixe direkt von der IP-Adresse basierend auf der Klasse (A, B oder C, die sich je nach Umfang der darin enthaltenen IP-Adressen unterscheiden) der Adresse und der Netzwerkmaske bezogen werden. Seit der Einführung von CIDRs erfordert die Zuweisung einer IP-Adresse an eine Netzwerkschnittstelle jedoch sowohl eine Adresse als auch deren Netzwerkmaske. Weitere Informationen: <a href="https://de.wikipedia.org/wiki/Classless_Inter-Domain_Routing" target="_blank">Wikipedia</a>.</p>
             </div>
         </main>
 
