@@ -1,0 +1,26 @@
+{
+  "name": "cidr-rechner",
+  "version": "1.0.0",
+  "description": "Der IP Subnet Rechner ermöglicht Subnet Berechnungen mit Netzwerk-Klasse, IP-Adresse und Subnet-Maske",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serverhelfer/CIDR-Rechner.git"
+  },
+  "keywords": [
+    "cidr",
+    "subnet",
+    "subnet-calculatr",
+    "javascript",
+    "web"
+  ],
+  "author": "Serverhelfer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/serverhelfer/CIDR-Rechner/issues"
+  },
+  "homepage": "https://cidr-rechner.de"
+}
