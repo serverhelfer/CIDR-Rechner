@@ -1,6 +1,6 @@
 {
   "name": "cidr-rechner",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Der IP Subnet Rechner ermöglicht Subnet Berechnungen mit Netzwerk-Klasse, IP-Adresse und Subnet-Maske",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "keywords": [
     "cidr",
     "subnet",
-    "subnet-calculatr",
+    "subnet-calculator",
     "javascript",
     "web"
   ],
