@@ -1,3 +1,11 @@
 # CIDR-Rechner
 
+Eine Subnetzmaske ist eine Zahl, die einen Bereich von IP-Adressen definiert, die in einem Netzwerk verwendet werden können. (Es ist nichts, was Sie auf dem Kopf tragen, um Subnetze draußen zu halten.) Subnetzmasken werden verwendet, um Subnetze oder Subnetze zu bezeichnen, die typischerweise LANs lokaler Netzwerke sind, die mit dem Internet verbunden sind. Systeme innerhalb desselben Subnetzes können direkt miteinander kommunizieren, während Systeme auf verschiedenen Subnetzen über einen Router kommunizieren müssen. Daher können Teilnetze verwendet werden, um mehrere Netzwerke zu partitionieren und den Datenverkehr zwischen ihnen zu begrenzen.
+
+Eine Subnetzmaske verbirgt oder "maskiert" den Netzwerkteil der IP-Adresse eines Systems und lässt nur den Hostteil als Maschinenkennung zurück. Eine gängige Subnetzmaske für eine IP-Adresse der Klasse C ist 255.255.255.255.255.0. Jeder Abschnitt der Subnetzmaske kann eine Zahl von 0 bis 256 enthalten, genau wie eine IP-Adresse. Daher sind im obigen Beispiel die ersten drei Abschnitte voll, d.h. die IP-Adressen der Computer innerhalb der Subnetzmaske müssen in den ersten drei Abschnitten identisch sein. Der letzte Abschnitt der IP-Adresse jedes Computers kann zwischen 0 und 255 liegen. Beispielsweise wären die IP-Adressen 10.0.1.201 und 10.0.1.202 im gleichen Subnetz, während 10.0.2.201 dies nicht tun würde. Daher ermöglicht eine Subnetzmaske von 255.255.255.255.0 fast 256 eindeutige Hosts innerhalb des Netzwerks (da nicht alle 256 IP-Adressen verwendet werden können).
+
+Wenn Ihr System mit einem Netzwerk verbunden ist, können Sie in der Regel die Nummer der Subnetzmaske des Netzwerks in der Systemsteuerung (Windows) oder in der Systemeinstellung (Mac OS X) anzeigen. Die meisten Heimnetzwerke verwenden die Standard-Subnetzmaske 255.255.255.255.0. Einige Office-Netzwerke können jedoch eine andere Subnetzmaske verwenden, wie beispielsweise 255.255.255.255.128, mit der ein Netzwerk in zwei Subnetze aufgeteilt werden kann. Große Netzwerke mit mehreren tausend Rechnern können eine Subnetzmaske von 255.255.0.0.0 verwenden. Dies ist die Standard-Subnetzmaske, die von Netzwerken der Klasse B verwendet wird. Die größten Class-A-Netzwerke verwenden eine Standard-Subnetzmaske von 255.0.0.0.0.0.
+
+-----
+
 Powered by [Serverhelfer.de](https://serverhelfer.de)
